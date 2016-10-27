@@ -2,5 +2,9 @@
 <%= link_to "New List", new_list_path %><br /><br />
 
 <% @lists.each do |list| %>
-  <%=list.name %><br />
+<div class = "list-name">
+  <%= link_to list.name, list_path(list) %>
+  <%= link_to "Edit", edit_list_path(list) %>
+  <%= link_to image_tag("delete.jpg", size: "40x40", alt: "delete"), list_path(list), method: :delete, class: "right-sided" %><br />
+</div>
 <%end%>

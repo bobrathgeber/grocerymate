@@ -1,0 +1,27 @@
+<h1><%= @list.name %></h1>
+<h2>=Editing=</h2>
+
+<div class="column" id="current-list">
+  <h3>I need...</h3>
+  <% @list.items.each do |item| %>
+    <% item_id = item.id.to_s %>
+    <div class="portlet" id=<%=item_id%>>
+      <div class="portlet-header">item.name</div>
+      <div class="portlet-content">item.note</div>
+    </div>
+  <% end %>
+</div>
+
+<div class="column" id="available-items">
+  <h3>Items...</h3>
+
+  <% @items.each do |item| %>
+    <% if not @list.items.exists?(item) %>
+      <% item_id = item.id.to_s %>
+      <div class="portlet" id=<%=item_id%>>
+        <div class="portlet-header"><%=item.name%></div>
+        <div class="portlet-content"><%=item.note%></div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

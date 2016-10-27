@@ -1,6 +1,5 @@
 body, html {
   background-color: #EEE;
-  border: solid black 1px;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -9,12 +8,13 @@ body, html {
 
 #wrapper{
   width: 600px;
-  height: auto;
-  min-height: 90%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
+  margin-bottom: 25px;
   border: solid black 1px;
+  overflow: auto;
 }
 
 header{
@@ -23,26 +23,26 @@ header{
 }
 
 .nav {
-  border: solid black 1px;
-  width: 50%;
+  //border: solid black 1px;
+  width: 70%;
   margin: 0 auto;
 }
 
 .nav ul{
-
+  height:40px;
   margin: 0 auto;
 }
 
 .nav li{
   display:inline;;
   list-style: none;
-  height:30px;
+  font-size: 30px;
   text-transform: uppercase;
 }
 
 .nav-button{
   clear:left;
-  margin: 0;
+  margin: 0 25px;
   padding: 0;
   width: 50px;
   height: 50px;
@@ -55,6 +55,8 @@ header{
 
 .login{
   float:right;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .notice{
@@ -68,3 +70,93 @@ header{
   padding: 5px;
   float:left;
 }
+
+.item{
+  border: solid black 1px;
+  margin: 0;
+  height: 40px;
+  width: 550px;
+  position: relative;
+}
+
+.item-name {
+  width: 480px;
+  padding-left: 20px;
+  position: absolute;
+  top: 12px;
+}
+
+.item-delete-button{
+  float: right;
+  margin-left: 20px;
+  width: 40px;
+  height:40px;
+}
+
+.list-name{
+  border: solid black 1px;
+  margin: 5px 0;
+  height: 40px;
+  width: 550px;
+  position: relative;
+}
+
+.right-sided{
+  clear: right;
+  float: right;
+}
+
+input[id="item_name"]
+{
+  width: 500px;
+  margin: auto;
+}
+
+/**************/
+.active-item{
+  border: solid black 1px;
+  margin: 3px 0;
+  height: 40px;
+  padding: 5px;
+}
+
+.acquired-item{
+  text-decoration: line-through;
+  background-color: #ccffcc;
+}
+
+.item-note{
+
+}
+
+/********Sortable*********/
+.column {
+    width: 100%;
+    float: left;
+    padding-bottom: 100px;
+    border: solid black 1px;
+  }
+  .portlet {
+    margin: 0 1em .5em 0;
+    padding: 0.3em;
+  }
+  .portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+  }
+  .portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+  }
+  .portlet-content {
+    display: none;
+    padding: 0.4em;
+  }
+  .portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+  }

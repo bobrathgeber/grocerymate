@@ -1,1 +1,25 @@
 <h1><%=@list.name%></h1>
+<h2>=Shopping=</h2>
+
+<div class="column-container">
+  <h3>I need...</h3>
+  <div class="column">
+    <% @list.items.each do |item| %>
+      <div class="portlet">
+        <div class="portlet-header">item.name</div>
+        <div class="portlet-content">item.note</div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="column-container">
+  <h3>I have...</h3>
+  <div class="column">
+
+    <div class="portlet">
+      <div class="portlet-header">Links</div>
+      <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+    </div>
+  </div>
+</div>

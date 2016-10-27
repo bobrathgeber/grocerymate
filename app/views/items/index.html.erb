@@ -1,5 +1,24 @@
 <h1>All Items</h1>
+<%= form_for(@item, html: {multipart: true}) do |f| %>
+<ul>
+  <% @item.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %> <%= f.submit "", :type => :image, :src => "/images/add.jpg" %>
+  </p>
+<% end %>
+<br />
 
-<% @items.each do |item| %>
-  <%=item.name %><br />
-<%end%>
+<div class="column" id="available-items">
+  <% @items.each do |item| %>
+      <% item_id = item.id.to_s %>
+      <div class="portlet" id=<%=item_id%>>
+        <div class="portlet-header"><%=item.name%>  <div class="item-delete-button"><%= link_to image_tag("delete.jpg", size: "40x40", alt: "delete"), item_path(item), method: :delete %></div></div>
+        <div class="portlet-content"><%=item.note%></div>
+
+      </div>
+  <% end %>
+</div>
